@@ -14,7 +14,7 @@
                 <div class="border-bottom">
                     <th>NO</th>
                     <th style="width:50%">SUBJECT</th>
-                    <th>AUTHOR</th>
+                    <th>NAME</th>
                     <th>DATE</th>
                 </div>
             </tr>
@@ -30,7 +30,7 @@
                 <td class="text-left">
                     <a href="{% url 'drama:detail' question.id %}">{{ question.subject }}</a>
                     {% if question.answer_set.count > 0 %}
-                    <span class="text-danger small ml-2">{{ question.answer_set.count }}</span>
+                    <span class="text-success small ml-2">{{ question.answer_set.count }}</span>
                     {% endif %}
                 </td>
                 <td>{{ question.author.username }}</td>
@@ -49,11 +49,11 @@
             <!-- 이전페이지 -->
             {% if question_list.has_previous %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ question_list.previous_page_number }}">이전</a>
+                <a class="page-link" href="?page={{ question_list.previous_page_number }}"><</a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#"><</a>
             </li>
             {% endif %}
             <!-- 페이지리스트 -->
@@ -73,16 +73,16 @@
             <!-- 다음페이지 -->
             {% if question_list.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ question_list.next_page_number }}">다음</a>
+                <a class="page-link" href="?page={{ question_list.next_page_number }}">></a>
             </li>
             {% else %}
             <li class="page-item disabled">
-                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">></a>
             </li>
             {% endif %}
         </ul>
         <!-- 페이징처리 끝 -->
-        <a href="{% url 'drama:question_create' %}" class="btn btn-outline-success">질문 등록하기</a>
+        <a href="{% url 'drama:question_create' %}" class="btn btn-outline-success">질문 등록</a>
     </div>
 </div>
 {% endblock %}
