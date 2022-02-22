@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
-
 {% block content %}
+    <style>
+
+        @font-face {
+             font-family: 'Handon3gyeopsal600g';
+             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Handon3gyeopsal600g.woff') format('woff');
+             font-weight: normal;
+             font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h5 {
+            font-family: 'Handon3gyeopsal600g';
+        }
+
+        * {
+            font-family: 'Pretendard-Regular';
+        }
+
+    </style>
 <div class="container">
     <h5 class="my-3 border-bottom pb-2">질문등록</h5>
     <form method="post" class="post-form my-3">
